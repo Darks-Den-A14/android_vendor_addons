@@ -360,6 +360,13 @@ PRODUCT_PACKAGES += \
     SplitShadeLayoutOverlay \
     SplitShadeCutoutOverlay
 
+TARGET_PREBUILT_BCR ?= true
+# Basic call recorder
+ifeq ($(strip $(TARGET_PREBUILT_BCR)),true)
+PRODUCT_PACKAGES += \
+    Bcr
+endif
+
 # Include {Lato,Rubik} fonts
 $(call inherit-product-if-exists, external/google-fonts/lato/fonts.mk)
 $(call inherit-product-if-exists, external/google-fonts/rubik/fonts.mk)
