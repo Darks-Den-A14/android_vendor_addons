@@ -44,6 +44,11 @@ endif
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.launcher.blur.appLaunch=0
 
+# GAPPS
+ifeq ($(WITH_GMS),true)
+$(call inherit-product-if-exists, vendor/gapps/common/common-vendor.mk)
+endif
+
 # Mainline spoofing properties
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.pihooks_mainline_BRAND?=google \
