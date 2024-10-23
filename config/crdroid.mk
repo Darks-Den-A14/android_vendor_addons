@@ -49,10 +49,10 @@ ifeq ($(WITH_GMS),true)
 $(call inherit-product-if-exists, vendor/gapps/common/common-vendor.mk)
 
 PRODUCT_SYSTEM_PROPERTIES += \
-     ro.crdroid.buildtype=Gapps
+     ro.crdroid.buildtype=Custom[Gapps]
 else
 PRODUCT_SYSTEM_PROPERTIES += \
-     ro.crdroid.buildtype=Vanilla
+     ro.crdroid.buildtype=Custom[Vanilla]
 endif
 
 # Mainline spoofing properties
